@@ -1,0 +1,70 @@
+<mxfile host="Electron" modified="2023-09-06T08:04:51.909Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="YtKkNgCtCjZm73n-QA_-" version="21.6.5" type="device">
+  <diagram name="Page-1" id="Wf1lQBhcwMwHaXiEkJ-i">
+    <mxGraphModel dx="2235" dy="830" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-26" value="user" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-20" y="220" width="160" height="540" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-27" value="&lt;div&gt;- id : long&lt;br&gt;&lt;/div&gt;&lt;div&gt;- lastname : string&lt;/div&gt;&lt;div&gt;- firstname : string&lt;br&gt;&lt;/div&gt;&lt;div&gt;- email : string&lt;/div&gt;&lt;div&gt;- phone : string&lt;/div&gt;&lt;div&gt;- password: string&lt;/div&gt;&lt;div&gt;- isAdmin : boolean&lt;/div&gt;&lt;div&gt;- isDriver : boolean&lt;/div&gt;&lt;div&gt;- reservation : list reservation&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TfM2sgKOtY96jR1R7HS6-26" vertex="1">
+          <mxGeometry y="26" width="160" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-28" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="TfM2sgKOtY96jR1R7HS6-26" vertex="1">
+          <mxGeometry y="180" width="160" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-29" value="&lt;div&gt;- getId() : long&lt;/div&gt;&lt;div&gt;- setId(long) : void&lt;/div&gt;&lt;div&gt;- getLastname() : string&lt;/div&gt;&lt;div&gt;- setLastname(string) : void&lt;/div&gt;&lt;div&gt;- getFirstname() : string&lt;/div&gt;&lt;div&gt;- setEmail(string) : void&lt;/div&gt;&lt;div&gt;- getEmail() : string&lt;/div&gt;&lt;div&gt;- setPhone(string) : void&lt;/div&gt;&lt;div&gt;- getPhone() : string&lt;/div&gt;&lt;div&gt;- setPassword(string) : void&lt;/div&gt;&lt;div&gt;- getPassword() : string&lt;/div&gt;&lt;div&gt;- setIsAdmin(boolean) : void&lt;/div&gt;&lt;div&gt;- getIsAdmin() : boolean&lt;br&gt;&lt;/div&gt;&lt;div&gt;- setIsDriver(boolean) : void&lt;/div&gt;&lt;div&gt;- getIsDriver() : boolean&lt;/div&gt;&lt;div&gt;- setReservation(list reservation) : void&lt;/div&gt;&lt;div&gt;- getReservation() : list reservation&lt;/div&gt;&lt;div&gt;- addReservation(reservation) : void&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TfM2sgKOtY96jR1R7HS6-26" vertex="1">
+          <mxGeometry y="190" width="160" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-32" value="estimation" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-360" y="210" width="160" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-33" value="&lt;div&gt;- id : long&lt;br&gt;&lt;/div&gt;&lt;div&gt;- comment : string&lt;/div&gt;&lt;div&gt;- rating : integer&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TfM2sgKOtY96jR1R7HS6-32" vertex="1">
+          <mxGeometry y="26" width="160" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-34" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="TfM2sgKOtY96jR1R7HS6-32" vertex="1">
+          <mxGeometry y="80" width="160" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-35" value="&lt;div&gt;- getId() : long&lt;/div&gt;&lt;div&gt;- setId(long) : void&lt;br&gt;&lt;/div&gt;&lt;div&gt;- getComment() : string&lt;/div&gt;&lt;div&gt;- setComment(string) : void&lt;/div&gt;&lt;div&gt;- getRating() : integer&lt;/div&gt;&lt;div&gt;- setRating(integer) : void&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TfM2sgKOtY96jR1R7HS6-32" vertex="1">
+          <mxGeometry y="90" width="160" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-36" value="reservation" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="270" y="210" width="160" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-37" value="&lt;div&gt;- id : long&lt;br&gt;&lt;/div&gt;&lt;div&gt;- departure : string&lt;br&gt;&lt;/div&gt;&lt;div&gt;- arrival : string&lt;/div&gt;&lt;div&gt;- date : date&lt;/div&gt;&lt;div&gt;- price : double&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TfM2sgKOtY96jR1R7HS6-36" vertex="1">
+          <mxGeometry y="26" width="160" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-38" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="TfM2sgKOtY96jR1R7HS6-36" vertex="1">
+          <mxGeometry y="110" width="160" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-39" value="&lt;div&gt;- getId() : long&lt;/div&gt;&lt;div&gt;- setId(long) : void&lt;/div&gt;&lt;div&gt;- getDeparture() : string&lt;/div&gt;&lt;div&gt;- setDeparture(string) : void&lt;/div&gt;&lt;div&gt;- getArrival() : string&lt;/div&gt;&lt;div&gt;- setArrival(string) : void&lt;/div&gt;&lt;div&gt;- getDate() : date&lt;/div&gt;&lt;div&gt;- setDate(date) : void&lt;/div&gt;&lt;div&gt;- getPrice() : double&lt;/div&gt;&lt;div&gt;- setPrice(double) : void&lt;br&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="TfM2sgKOtY96jR1R7HS6-36" vertex="1">
+          <mxGeometry y="120" width="160" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-45" value="1" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=1.02;entryY=0.296;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.002;exitY=0.568;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="TfM2sgKOtY96jR1R7HS6-27" target="TfM2sgKOtY96jR1R7HS6-35" edge="1">
+          <mxGeometry x="-0.8099" y="-30" relative="1" as="geometry">
+            <mxPoint x="-20" y="340" as="sourcePoint" />
+            <mxPoint x="40" y="319.71" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-46" value="0-n" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="TfM2sgKOtY96jR1R7HS6-45" connectable="0" vertex="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-170" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-48" value="0-1" style="endArrow=block;endFill=1;html=1;edgeStyle=orthogonalEdgeStyle;align=left;verticalAlign=top;rounded=0;entryX=0.014;entryY=0.01;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.991;exitY=0.553;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="TfM2sgKOtY96jR1R7HS6-27" target="TfM2sgKOtY96jR1R7HS6-39" edge="1">
+          <mxGeometry x="-0.8298" y="31" relative="1" as="geometry">
+            <mxPoint x="-10" y="343" as="sourcePoint" />
+            <mxPoint x="-187" y="343" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="TfM2sgKOtY96jR1R7HS6-49" value="0-n" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" parent="TfM2sgKOtY96jR1R7HS6-48" connectable="0" vertex="1">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="110" y="-5" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
