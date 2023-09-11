@@ -35,8 +35,8 @@ public Object getValueAt(int rowIndex, int columnIndex) {
         case 2 -> reservation.getArrival();
         case 3 -> reservation.getDate();
         case 4 -> reservation.getPrice();
-        case 5 -> reservation.getUserid();
-        case 6 -> reservation.getEstimationid();
+        case 5 -> reservation.getUserId();
+        case 6 -> reservation.getEstimationId();
         default -> null;
         };
         }

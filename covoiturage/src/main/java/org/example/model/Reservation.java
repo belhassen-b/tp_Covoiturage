@@ -16,23 +16,34 @@ public class Reservation {
     private Date date;
     private Double price;
 
-    private User userid;
+    private long userId;
 
-    private Estimation estimationid;
+    private long estimationId;
 
     public Reservation(long reservationId) {
         this.reservationId = reservationId;
     }
 
-    public void setUserId(long userId) {
-        this.userid = new User(userId);
+    public Reservation(String departure, String arrival, Date date, Double price, long userId, Estimation estimation) {
+        this.departure = departure;
+        this.arrival = arrival;
+        this.date = date;
+        this.price = price;
+        this.userId = userId;
+        this.estimationId = estimationId;
     }
 
-    public void setEstimationId(long estimationId) {
-        this.estimationid = new Estimation(estimationId);
-    }
 
     public void setDate(Date date) {
         this.date = date;
     }
-}
+
+    public void setEstimation(long estimationId) {
+        this.estimationId = estimationId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    }

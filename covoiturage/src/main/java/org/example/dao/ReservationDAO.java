@@ -3,8 +3,13 @@ package org.example.dao;
 import org.example.model.Reservation;
 import org.example.utils.ConDB;
 
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,10 +28,10 @@ public class ReservationDAO {
     private void preparedStatement(Reservation reservation) throws SQLException {
         ps.setString(1, reservation.getDeparture());
         ps.setString(2, reservation.getArrival());
-        ps.setDate(3, (Date) reservation.getDate());
+        ps.setDate(3, (java.sql.Date) reservation.getDate());
         ps.setDouble(4, reservation.getPrice());
-        ps.setLong(5, reservation.getUserid().getUserId());
-        ps.setLong(6, reservation.getEstimationid().getEstimationId());
+        ps.setLong(5, reservation.getUserId());
+        ps.setLong(6, reservation.getEstimationId());
     }
 
     private void rsNext(ArrayList<Reservation> reservations, ResultSet rs) throws SQLException {
@@ -45,7 +50,7 @@ public class ReservationDAO {
         reservation.setDate(rs.getDate("date"));
         reservation.setPrice(rs.getDouble("price"));
         reservation.setUserId(rs.getLong("user_id"));
-        reservation.setEstimationId(rs.getLong("estimation_id"));
+        reservation.setEstimation(rs.getLong("estimation_id"));
         reservations.add(reservation);
     }
 
@@ -166,5 +171,7 @@ public class ReservationDAO {
         }
         return getReservationCountByUserId(userId);
     }
+
+
 }
 

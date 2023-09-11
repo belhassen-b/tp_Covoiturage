@@ -74,7 +74,6 @@ public class ReservationUI extends JFrame {
         JButton addReservationButton = new JButton("Add");
         JButton updateReservationButton = new JButton("Update");
         JButton deleteReservationButton = new JButton("Delete");
-        JButton searchReservationButton = new JButton("Search");
         JTable reservationTable = new JTable();
         JScrollPane reservationScrollPane = new JScrollPane();
 
@@ -89,8 +88,6 @@ public class ReservationUI extends JFrame {
         departureTxtField.setBounds(230, 50, 200, 25);
         arrivalTxtField.setBounds(230, 80, 200, 25);
         dateChooser.setBounds(230, 110, 200, 25);
-
-//        dateTxtField.setBounds(230, 110, 200, 25);
         priceTxtField.setBounds(230, 140, 200, 25);
         userIdTxtField.setBounds(230, 170, 200, 25);
         estimationIdTxtField.setBounds(230, 200, 200, 25);
@@ -98,7 +95,6 @@ public class ReservationUI extends JFrame {
         addReservationButton.setBounds(20, 400, 200, 25);
         updateReservationButton.setBounds(230, 400, 200, 25);
         deleteReservationButton.setBounds(20, 450, 200, 25);
-        searchReservationButton.setBounds(230, 450, 200, 25);
 
         reservationScrollPane.setBounds(450, 30, 550, 700);
         reservationScrollPane.setViewportView(reservationTable);
@@ -116,7 +112,6 @@ public class ReservationUI extends JFrame {
         panel1.add(addReservationButton);
         panel1.add(updateReservationButton);
         panel1.add(deleteReservationButton);
-        panel1.add(searchReservationButton);
 
         panel1.add(reservationScrollPane);
 
@@ -141,8 +136,7 @@ public class ReservationUI extends JFrame {
                     userIdTxtField.setText(String.valueOf(reservationTable.getValueAt(selectedRow, 5)));
                     estimationIdTxtField.setText(String.valueOf(reservationTable.getValueAt(selectedRow, 6)));
                 }
-
-
+                
                 }
             });
 
@@ -162,7 +156,7 @@ addReservationButton.addActionListener(e -> {
     Reservation reservation = new Reservation();
     reservation.setDeparture(departureTxtField.getText());
     reservation.setArrival(arrivalTxtField.getText());
-    reservation.setDate((Date) dateChooser.getDate());
+    reservation.setDate(dateChooser.getDate());
     reservation.setPrice(Double.valueOf(priceTxtField.getText()));
     reservation.setUserId(Long.parseLong(userIdTxtField.getText()));
     reservation.setEstimationId(Long.parseLong(estimationIdTxtField.getText()));
@@ -175,15 +169,17 @@ addReservationButton.addActionListener(e -> {
 });
 
         updateReservationButton.addActionListener(e -> {
-            String reservationId = reservationIdTxtField.getText();
-            String departure = departureTxtField.getText();
-            String arrival = arrivalTxtField.getText();
-            String date = dateTxtField.getText();
-            String price = priceTxtField.getText();
-            String userId = userIdTxtField.getText();
-            String estimationId = estimationIdTxtField.getText();
+            Reservation reservation = new Reservation();
+            reservation.setReservationId(Long.parseLong(reservationIdTxtField.getText()));
+            reservation.setDeparture(departureTxtField.getText());
+            reservation.setArrival(arrivalTxtField.getText());
+            reservation.setDate(new java.sql.Date(dateChooser.getDate().getTime()));
+            reservation.setPrice(Double.valueOf(priceTxtField.getText()));
+            reservation.setUserId(Long.parseLong(userIdTxtField.getText()));
+            reservation.setEstimationId(Long.parseLong(estimationIdTxtField.getText()));
 
-//            reservationDAO.updateReservation(reservationId, departure, arrival, date, price, userId, estimationId);
+
+            reservationDAO.updateReservation(reservation);
             JOptionPane.showMessageDialog(null, "Reservation updated successfully!");
             dispose();
             new ReservationUI();
@@ -191,20 +187,14 @@ addReservationButton.addActionListener(e -> {
 
         deleteReservationButton.addActionListener(e -> {
             String reservationId = reservationIdTxtField.getText();
-//            reservationDAO.deleteReservation(reservationId);
+            reservationDAO.deleteReservation(Long.valueOf(reservationId));
             JOptionPane.showMessageDialog(null, "Reservation deleted successfully!");
             dispose();
             new ReservationUI();
         });
 
-        searchReservationButton.addActionListener(e -> {
-            String reservationId = reservationIdTxtField.getText();
-            reservationController.searchReservation(Long.parseLong(reservationId));
-            JOptionPane.showMessageDialog(null, "Reservation searched successfully!");
-            dispose();
-            new ReservationUI();
-        }
-        );
+
+
 
 
 
