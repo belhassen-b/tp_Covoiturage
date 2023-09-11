@@ -10,15 +10,11 @@ import java.awt.*;
 
 public class StatisticsUI extends JFrame {
 
-    private EstimationDAO estimation = new EstimationDAO();
-    private ReservationDAO reservation = new ReservationDAO();
-    private UserDAO user = new UserDAO();
+    private final EstimationDAO estimation = new EstimationDAO();
+    private final ReservationDAO reservation = new ReservationDAO();
+    private final UserDAO user = new UserDAO();
     private JTable statisticsTable;
     private JTextField searchTextField;
-
-    private JLabel searchLabel;
-
-    private JButton searchButton;
 
     public StatisticsUI() {
         super("Statistics");
@@ -37,13 +33,13 @@ public class StatisticsUI extends JFrame {
         JPanel searchPanel = new JPanel();
         searchPanel.setLayout(new FlowLayout());
 
-        searchLabel = new JLabel("Search by User ID:");
+        JLabel searchLabel = new JLabel("Search by User ID:");
         searchPanel.add(searchLabel);
 
-        searchTextField = new JTextField(10); // Adjust the size as needed
+        searchTextField = new JTextField(10);
         searchPanel.add(searchTextField);
 
-        searchButton = new JButton("Search");
+        JButton searchButton = new JButton("Search");
         searchPanel.add(searchButton);
 
         JButton backBtn = new JButton("Back");
@@ -75,35 +71,21 @@ public class StatisticsUI extends JFrame {
 
         setContentPane(mainPanel);
 
-        searchButton.addActionListener(e -> {
-            addDataToTable();
-        });
+        searchButton.addActionListener(e -> addDataToTable());
 
         addDataToTable();
 
         setVisible(true);
     }
-
-    // Method to add data to the table (you can replace this with your data source)
     private void addDataToTable() {
 
         DefaultTableModel tableModel = (DefaultTableModel) statisticsTable.getModel();
-
-        // Clear table before adding new data
-
         tableModel.setRowCount(0);
-
-
-
-        // Get user ID from search text field
-        String userId = searchTextField.getText().trim(); // Trim to remove leading/trailing spaces
+        String userId = searchTextField.getText().trim();
 
         if (!userId.isEmpty()) {
             try {
-                // Attempt to parse user ID
                 long userIdLong = Long.parseLong(userId);
-
-                // Get data from database
                 int reservationCount = reservation.getReservationCountByUserId(userIdLong);
 
                 if( reservationCount == 0){
@@ -116,11 +98,9 @@ public class StatisticsUI extends JFrame {
                 int lowRating = estimation.getLowRatingByUserId(userIdLong);
                 int averageRating = (int) estimation.getAverageRatingByUserId(userIdLong);
 
-                // Add rows of data (one per row)
                 Object[] rowData = {userId, reservationCount, topRating, lowRating, averageRating};
                 tableModel.addRow(rowData);
             } catch (NumberFormatException e) {
-                // Handle invalid user ID input (e.g., non-numeric input)
                 JOptionPane.showMessageDialog(this, "Invalid User ID", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
@@ -128,8 +108,6 @@ public class StatisticsUI extends JFrame {
 
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new StatisticsUI();
-        });
+        SwingUtilities.invokeLater(StatisticsUI::new);
     }
 }

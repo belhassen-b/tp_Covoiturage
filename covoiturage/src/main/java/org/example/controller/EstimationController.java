@@ -3,11 +3,9 @@ package org.example.controller;
 import org.example.dao.EstimationDAO;
 import org.example.model.Estimation;
 
-import javax.swing.table.TableModel;
-
 public class EstimationController {
 
-    private EstimationDAO estimationDAO = new EstimationDAO();
+    private final EstimationDAO estimationDAO = new EstimationDAO();
 
     public void addEstimation(Estimation estimation) {
         estimationDAO.addEstimation(estimation);

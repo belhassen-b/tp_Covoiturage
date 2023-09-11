@@ -15,7 +15,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class UserDAO {
-    private Connection conDB;
+    private final Connection conDB;
 
     private PreparedStatement ps;
 

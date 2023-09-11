@@ -88,9 +88,7 @@ public class LoginUI extends JFrame {
             }
         });
 
-        exitButton.addActionListener(e -> {
-            System.exit(0);
-        });
+        exitButton.addActionListener(e -> System.exit(0));
 
         setVisible(true);
     }
@@ -100,8 +98,6 @@ public class LoginUI extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new LoginUI();
-        });
+        SwingUtilities.invokeLater(LoginUI::new);
     }
 }

@@ -1,13 +1,11 @@
 package org.example.views;
 
 import org.example.controller.EstimationController;
+import org.example.controller.UserController;
 import org.example.dao.EstimationDAO;
 import org.example.dao.ReservationDAO;
-import org.example.dao.UserDAO;
 import org.example.model.Estimation;
 import org.example.model.Reservation;
-import org.example.model.User;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -15,22 +13,14 @@ import java.util.List;
 
 public class EstimationUI extends JFrame {
 
-    private UserDAO user = new UserDAO();
+    private final UserController user = new UserController();
 
-    private ReservationDAO reservation = new ReservationDAO();
-    private EstimationDAO estimation = new EstimationDAO();
+    private final ReservationDAO reservation = new ReservationDAO();
+    private final EstimationDAO estimation = new EstimationDAO();
 
-    private EstimationController estimationController = new EstimationController();
+    private final EstimationController estimationController = new EstimationController();
 
     private JTable estimationTable;
-
-    private JButton addEstimationButton;
-
-    private JButton updateEstimationButton;
-
-    private JButton deleteEstimationButton;
-
-    private JButton backBtn;
 
     private JTextField searchTextField;
 
@@ -82,22 +72,22 @@ public class EstimationUI extends JFrame {
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setLayout(new FlowLayout());
 
-        addEstimationButton = new JButton("Add");
+        JButton addEstimationButton = new JButton("Add");
         addEstimationButton.setBackground(Color.GREEN);
         addEstimationButton.setForeground(Color.BLACK);
         addEstimationButton.setPreferredSize(new Dimension(100, 40));
 
-        updateEstimationButton = new JButton("Update");
+        JButton updateEstimationButton = new JButton("Update");
         updateEstimationButton.setBackground(Color.ORANGE);
         updateEstimationButton.setForeground(Color.BLACK);
         updateEstimationButton.setPreferredSize(new Dimension(100, 40));
 
-        deleteEstimationButton = new JButton("Delete");
+        JButton deleteEstimationButton = new JButton("Delete");
         deleteEstimationButton.setBackground(Color.RED);
         deleteEstimationButton.setForeground(Color.BLACK);
         deleteEstimationButton.setPreferredSize(new Dimension(100, 40));
 
-        backBtn = new JButton("Back");
+        JButton backBtn = new JButton("Back");
         backBtn.setBackground(Color.RED);
         backBtn.setForeground(Color.WHITE);
         backBtn.setPreferredSize(new Dimension(100, 40));
@@ -209,9 +199,7 @@ public class EstimationUI extends JFrame {
 
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            new EstimationUI();
-        });
+        SwingUtilities.invokeLater(EstimationUI::new);
     }
 
 }

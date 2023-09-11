@@ -12,9 +12,11 @@ import java.sql.Date;
 import java.util.List;
 
 public class ReservationUI extends JFrame {
-    ReservationDAO reservationDAO = new ReservationDAO();
+    final ReservationDAO reservationDAO = new ReservationDAO();
 
-    private RightReservationTableModel model;
+    final ReservationController reservationController = new ReservationController();
+
+    private final RightReservationTableModel model;
 
     public ReservationUI() {
         super();
@@ -158,14 +160,14 @@ public class ReservationUI extends JFrame {
         // button listener
 addReservationButton.addActionListener(e -> {
     Reservation reservation = new Reservation();
-//    reservation.setDeparture(departureTxtField.getText());
-//    reservation.setArrival(arrivalTxtField.getText());
-//    reservation.setDate(dateTxtField.getText());
-//    reservation.setPrice(priceTxtField.getText());
-//    reservation.setUserId(userIdTxtField.getText());
-//    reservation.setEstimationId(estimationIdTxtField.getText());
+    reservation.setDeparture(departureTxtField.getText());
+    reservation.setArrival(arrivalTxtField.getText());
+    reservation.setDate((Date) dateChooser.getDate());
+    reservation.setPrice(Double.valueOf(priceTxtField.getText()));
+    reservation.setUserId(Long.parseLong(userIdTxtField.getText()));
+    reservation.setEstimationId(Long.parseLong(estimationIdTxtField.getText()));
 
-    reservationDAO.addReservation(reservation);
+    reservationController.addReservation(reservation);
     JOptionPane.showMessageDialog(null, "Reservation added successfully!");
     dispose();
     new ReservationUI();
@@ -197,7 +199,7 @@ addReservationButton.addActionListener(e -> {
 
         searchReservationButton.addActionListener(e -> {
             String reservationId = reservationIdTxtField.getText();
-            reservationDAO.searchReservation(reservationId);
+            reservationController.searchReservation(Long.parseLong(reservationId));
             JOptionPane.showMessageDialog(null, "Reservation searched successfully!");
             dispose();
             new ReservationUI();

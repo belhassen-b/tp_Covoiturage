@@ -1,7 +1,6 @@
 package org.example.views;
 
 import org.example.controller.UserController;
-import org.example.dao.ReservationDAO;
 import org.example.dao.UserDAO;
 import org.example.model.User;
 import org.example.utils.BottomUserTableModel;
@@ -15,10 +14,7 @@ import java.util.Objects;
 
 public class UserUI extends JFrame {
 
-    private UserDAO userDAO;
-
     private final UserController userController = new UserController();
-
 
     private final BottomUserTableModel model;
 
@@ -51,7 +47,7 @@ public class UserUI extends JFrame {
         super();
 
         model = new BottomUserTableModel(new ArrayList<>());
-        userDAO = new UserDAO();
+        UserDAO userDAO = new UserDAO();
         initComponents();
 
     }
@@ -319,7 +315,7 @@ public class UserUI extends JFrame {
         deleteButton.addActionListener(e -> {
             User user = new User();
             user.setUserId(Long.parseLong(txtId.getText()));
-            userDAO.deleteUser(user.getUserId());
+            userController.deleteUser(user.getUserId());
             JOptionPane.showMessageDialog(null, "L'utilisateur a bien été supprimé !", "Success", JOptionPane.INFORMATION_MESSAGE);
             showUser(table);
         });

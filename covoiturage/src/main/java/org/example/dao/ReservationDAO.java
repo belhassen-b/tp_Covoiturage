@@ -44,8 +44,8 @@ public class ReservationDAO {
         reservation.setArrival(rs.getString("arrival"));
         reservation.setDate(rs.getDate("date"));
         reservation.setPrice(rs.getDouble("price"));
-//        reservation.getUser().setUserId(rs.getLong("user_id"));
-//        reservation.getEstimation().setEstimationId(rs.getLong("estimation_id"));
+        reservation.setUserId(rs.getLong("user_id"));
+        reservation.setEstimationId(rs.getLong("estimation_id"));
         reservations.add(reservation);
     }
 

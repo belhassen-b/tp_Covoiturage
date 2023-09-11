@@ -7,8 +7,8 @@ import org.example.model.User;
 import java.util.List;
 
 public class UserController {
-    private UserDAO userDAO = new UserDAO();
-    private ReservationDAO reservationDAO = new ReservationDAO();
+    private final UserDAO userDAO = new UserDAO();
+    private final ReservationDAO reservationDAO = new ReservationDAO();
 
     public void addUser(User user) {
         userDAO.addUser(user);
@@ -18,8 +18,9 @@ public class UserController {
         userDAO.deleteUser(userId);
     }
 
-    public User getUserById(long userId) {
-        return userDAO.getUserById(userId);
+    public long getUserById(long userId) {
+          userDAO.getUserById(userId);
+        return userId;
     }
 
     public void updateUser(User user) {
@@ -32,11 +33,6 @@ public class UserController {
         return userDAO.getAllUsers();
     }
 
-    public boolean isDriver(long userId) {
-        return userDAO.isDriver(userId);
-    }
 
-    public void getReservations(long userId) {
-        reservationDAO.getReservationCount(userId);
-    }
+
 }

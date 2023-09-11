@@ -1,7 +1,6 @@
 package org.example.dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,11 +16,10 @@ import org.example.model.Estimation;
 
 public class EstimationDAO {
 
-    private MongoClient mongoClient;
     private static MongoDatabase database;
 
     public EstimationDAO() {
-        mongoClient = MongoClients.create("mongodb://localhost:27017"); // Replace with your MongoDB connection string
+        MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
         database = mongoClient.getDatabase("db-tp");
 
     }

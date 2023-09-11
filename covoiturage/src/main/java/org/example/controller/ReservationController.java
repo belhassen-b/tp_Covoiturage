@@ -5,7 +5,7 @@ import org.example.model.Reservation;
 
 public class ReservationController {
 
-    private ReservationDAO reservationDAO = new ReservationDAO();
+    private final ReservationDAO reservationDAO = new ReservationDAO();
 
     public void addReservation(Reservation reservation){
         reservationDAO.addReservation(reservation);
@@ -26,9 +26,11 @@ public class ReservationController {
     public void getAllReservations() {
         reservationDAO.getAllReservations();
     }
-
-
-    //methode searchReservation
+    
+    public void searchReservation(long reservationId) {
+        reservationDAO.searchReservation(String.valueOf(reservationId));
+    }
+    
 
 
 }

@@ -23,4 +23,16 @@ public class Reservation {
     public Reservation(long reservationId) {
         this.reservationId = reservationId;
     }
+
+    public void setUserId(long userId) {
+        this.userid = new User(userId);
+    }
+
+    public void setEstimationId(long estimationId) {
+        this.estimationid = new Estimation(estimationId);
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 }

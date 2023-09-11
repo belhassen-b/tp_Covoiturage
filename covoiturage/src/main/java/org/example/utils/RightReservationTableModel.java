@@ -7,7 +7,7 @@ import javax.swing.table.TableModel;
 import java.util.List;
 
 public class RightReservationTableModel extends AbstractTableModel implements TableModel {
-private List<Reservation> data;
+private final List<Reservation> data;
 
 private final String[] columnNames = {"Id", "Departure", "Arrival", "Date", "Price", "UserId", "EstimationId"};
 
